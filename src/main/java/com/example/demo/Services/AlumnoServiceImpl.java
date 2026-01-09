@@ -31,6 +31,7 @@ public class AlumnoServiceImpl implements AlumnoService {
     }
 
     private AlumnoDTO maptoDTO(Alumno alumno) {
+
         AlumnoDTO dto = new AlumnoDTO();
         dto.setDniAlumno(alumno.getDniAlumno());
         dto.setIdAlumno(alumno.getId_Alumno());
@@ -38,22 +39,24 @@ public class AlumnoServiceImpl implements AlumnoService {
         dto.setApellido(decifrar(alumno.getApellido(), "ClaveSecreta"));
         dto.setDireccion(alumno.getDireccion());
         dto.setEstadoActual(alumno.getEstadoActual());
-        return dto;
+        System.out.println("NOMBRE CIFRADO: " + alumno.getNombre());
+        System.out.println("NOMBRE DESCIFRADO: " + decifrar(alumno.getNombre(), "ClaveSecreta"));
 
+
+        return dto;
     }
 
+
     public Alumno mapToEntity(AlumnoDTO alumnoDTO) {
-        System.out.println(alumnoDTO);
+
         Alumno alumno = new Alumno();
         alumno.setDniAlumno(alumnoDTO.getDniAlumno());
-        alumno.setId_Alumno(alumnoDTO.getIdAlumno());
         alumno.setNombre(cifrar(alumnoDTO.getNombre(), "ClaveSecreta"));
         alumno.setApellido(cifrar(alumnoDTO.getApellido(), "ClaveSecreta"));
         alumno.setDireccion(alumnoDTO.getDireccion());
         alumno.setEstadoActual(alumnoDTO.getEstadoActual());
 
         return alumno;
-
     }
 
     @Override

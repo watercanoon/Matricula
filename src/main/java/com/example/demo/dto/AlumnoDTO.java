@@ -7,13 +7,13 @@ import lombok.Data;
 @Data
 public class AlumnoDTO {
 
-    private int IdAlumno;
+    private Integer idAlumno;
     private int dniAlumno;
-    private String Nombre;
-    private String Apellido;
-    private String Direccion;
-    private EstadoAlumno EstadoActual;
-    private int id_Matricula;
-    private int id_Pago;
+    private String nombre;
+    private String apellido;
+    private String direccion;
+    private EstadoAlumno estadoActual;
+    private Integer idMatricula;
+    private Integer idPago;
 
 }

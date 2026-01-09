@@ -560,12 +560,11 @@ async function guardarAlumno() {
   // ⭐ FIN DE LA VALIDACIÓN ⭐
 
   const alumno = {
-    IdAlumno: id ? parseInt(id) : 0,
     dniAlumno: dni,
-    Nombre: nombre,
-    Apellido: apellido,
-    Direccion: direccion,
-    EstadoActual: document.getElementById("estadoActual").value || "Activo",
+    nombre: nombre,
+    apellido: apellido,
+    direccion: direccion,
+    estadoActual: document.getElementById("estadoActual").value || "Activo",
   };
 
   console.log("Guardando alumno:", alumno);
